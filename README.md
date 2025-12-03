@@ -24,7 +24,7 @@ Next, install things related to LIBERO
 ```bash
 # suppose that you are at $HOME
 
-git clone https://github.com/SamuelGong/LIBERO# IMPORTANT: Not the original https://github.com/Lifelong-Robot-Learning/LIBERO.git
+git clone https://github.com/SamuelGong/LIBERO # IMPORTANT: Not the original https://github.com/Lifelong-Robot-Learning/LIBERO.git
 cd LIBERO
 pip install .  # IMPORTANT: Not pip install -e .
 ```
