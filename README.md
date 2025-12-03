@@ -2,7 +2,7 @@
 
 > [This](./README.md) is the original README of the project.
 
-## Preparation
+## 1. Preparation
 
 ```bash
 conda create -n vla python=3.10 -y
@@ -49,7 +49,37 @@ pip install -e .
 Finally, install vla-cache itself:
 ```bash
 # suppose that you are at $HOME
-cd openvla
-pip install -r experiments/robot/libero/libero_requirements.txt
+git clone git@github.com:SamuelGong/vla-cache.git # IMPORTANT: not git@github.com:siyuhsu/vla-cache.git
+cd vla-cache
+cd src/openvla
+pip install -e .
+```
+
+Also, download the necessary model for inference:
+```bash
+```bash
+# suppose that you are at $HOME
+cd vla-cache
+cd src/openvla
+python vla_cache_scripts/download_model_local.py \
+  --model_id openvla/openvla-7b-finetuned-libero-spatial
+```
+
+## 2. Run
+
+```bash
+# with cache
+python experiments/robot/libero/run_libero_eval.py \
+  --pretrained_checkpoint checkpoints/openvla-7b-finetuned-libero-spatial \
+  --task_suite_name libero_spatial \
+  --use_vla_cache True
+  
+# or no cache
+python experiments/robot/libero/run_libero_eval.py \
+  --pretrained_checkpoint checkpoints/openvla-7b-finetuned-libero-spatial \
+  --task_suite_name libero_spatial \
+  --use_vla_cache False
+  
+# Both may take a bit long
 ```
 
