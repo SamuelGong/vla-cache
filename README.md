@@ -1,6 +1,6 @@
 # Guidance
 
-> [This](./README.md) is the original README of the project.
+> [This](./README-old.md) is the original README of the project.
 
 ## 1. Preparation
 
